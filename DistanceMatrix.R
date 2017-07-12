@@ -64,3 +64,9 @@ write.csv(dist_mat,"Distance_Matrix-Town.csv")
 
 #####
 placee <- geocode("Plonsk",source = "google")
+#Plotting coordinates on world map
+library(rworldmap)
+library(rworldxtra)
+newmap <- getMap(resolution = "high")
+plot(newmap, xlim = c(-20, 59), ylim = c(35, 71), asp = 1)
+points(placee$lon, placee$lat, col = "red", cex = .6)
